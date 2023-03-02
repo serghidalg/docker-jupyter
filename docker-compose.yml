@@ -1,0 +1,14 @@
+version: "1"
+services:
+  topic_modeling:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jupyter_docker
+    environment:
+      - TEST='Y'
+    volumes:
+      - ./docker_home:/home/jovyan
+    ports:
+      - 8888:8888
+    restart: unless-stopped
